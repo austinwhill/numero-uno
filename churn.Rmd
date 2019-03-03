@@ -9,12 +9,13 @@ output:
 #Prepping data
 ```{r setup, message = F}
 library(dplyr)
+library(RCurl)
 library(ggplot2)
 library(corrplot)
 library(caret)
 library(MASS)
 library(randomForest)
-dat <- as.data.frame(read.csv("C:/Users/mqgy9210/Downloads/Data_Analyst_Take_Home_File.csv", header = T))
+dat <- as.data.frame(read.csv(text = getURL("https://raw.githubusercontent.com/austinwhill/numero-uno/master/churn.csv"), header = T))
 ```
 
 #Check for missing data and make sure data types are appropriate
